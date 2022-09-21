@@ -1,0 +1,122 @@
+[
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":1,
+        "fields":{
+            "watched":"Yes",
+            "title":"ILY from 38.000 FT",
+            "rating": "4.7/5",
+            "release_date":"5 Juli 2016",
+            "review":"Film yang sangat bagus untuk di tonton"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":2,
+        "fields":{
+            "watched":"Yes",
+            "title":"Bumi Manusia",
+            "rating": "5/5",
+            "release_date":"15 Agustus 2019",
+            "review":"Film yang menceritakan pribumi indonesia "
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":3,
+        "fields":{
+            "watched":"Yes",
+            "title":"Perempuan Tanah Jahanam",
+            "rating": "4.0/5",
+            "release_date":"17 Oktober 2019",
+            "review":"Film hantu yang menurut saya alurnya kurang jelas"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":4,
+        "fields":{
+            "watched":"Yes",
+            "title":"Imperfect",
+            "rating": "4.5/5",
+            "release_date":"19 Desember 2019",
+            "review":"Film yang menceritakan tentang hubungan antara laki laki dan perempuan"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":5,
+        "fields":{
+            "watched":"Yes",
+            "title":"Nanti Kita Cerita Tentang Hari ini",
+            "rating": "5/5",
+            "release_date":"2 Januari 2020",
+            "review":"Film yang sangat bagus dan menginspirasi"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched":"Yes",
+            "title":"Milea Suara dari Dilan",
+            "rating": "5/5",
+            "release_date":"13 Februari 2020",
+            "review":"Film lanjutan dari Dilan sangat bagus"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched":"Yes",
+            "title":"Asih 2",
+            "rating": "4.6/5",
+            "release_date":"24 Desember 2020",
+            "review":"Film horor indonesia yang lumayan bagus"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched":"Yes",
+            "title":"Merindu Cahaya De Amstel",
+            "rating": "4.8/5",
+            "release_date":"20 Januari 2022",
+            "review":"Film tentang orang yang bertaubat dari masa lalunya"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched":"No",
+            "title":"Pengabdi Setan 2",
+            "rating": "4.6/5",
+            "release_date":"4 Agustus 2022",
+            "review":"Menurut Review TIX film nya bagus tapi ceritanya masih menggantung"
+
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched":"No",
+            "title":"Red: One Piece",
+            "rating": "4.7/5",
+            "release_date":"21 September 2022",
+            "review":"Film yang sepertinya bagus dan seru"
+
+        }
+    }
+]

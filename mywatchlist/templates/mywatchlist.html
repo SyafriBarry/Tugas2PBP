@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    table, th, td{
+        border: 1px solid;
+    }
+    table thead tr{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;     
+    }
+
+    th,td {
+        padding: 10px;
+        
+    }
+    
+</style>    
+<h5>Nama: {{nama}}
+</h5>
+
+
+<h5>NPM: {{NPM}} </h5>
+
+
+<table>
+    <tr>
+    <th>Watched</th>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Release Date</th>
+    <th>Review</th>
+    </tr>
+    
+    {% for film in list_film %}
+    <tr>
+        <td>{{film.watched}}</td>
+        <td>{{film.title}}</td>
+        <td>{{film.rating}}</td>
+        <td>{{film.release_date}}</td>
+        <td>{{film.review}}</td>
+    </tr>
+{% endfor %}
+
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+</table>
+
+{% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+
+
+{% endblock content %}
