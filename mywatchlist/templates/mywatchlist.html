@@ -2,34 +2,14 @@
 
 {% block content %}
 
-<style>
-    table, th, td{
-        border: 1px solid;
-    }
-    table thead tr{
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9em;
-        font-family: sans-serif;
-        min-width: 400px;     
-    }
-
-    th,td {
-        padding: 10px;
-        
-    }
-    
-</style>    
-<h5>Nama: {{nama}}
-</h5>
-
-
-<h5>NPM: {{NPM}} </h5>
+<body style = "font-family:'Courier New'; padding: 5px; background-color: #D2DAFF; color: rgb(0, 0, 0);">
+   <h5 style = "text-align:left;font-size: 24px; background-color: #AEBDCA; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px; box-shadow: 5px 5px 5px #22302c;">Nama: {{nama}}</h5>
+   <h5 style = "text-align:left;font-size: 24px; background-color: #AEBDCA; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px; box-shadow: 5px 5px 5px #22302c;">NPM: {{NPM}} </h5>
 
 
 <table>
     <tr>
-    <th>Watched</th>
+    <th style = "text-align: center; background-color: #AEBDCA; color: rgb(0, 0, 0); padding: 5px; ">Watched</th>
     <th>Title</th>
     <th>Rating</th>
     <th>Release Date</th>
@@ -38,7 +18,7 @@
     
     {% for film in list_film %}
     <tr>
-        <td>{{film.watched}}</td>
+        <td style = "text-align: center; background-color: #AEBDCA; color: rgb(255, 255, 255); padding: 5px; " >{{film.watched}}</td>
         <td>{{film.title}}</td>
         <td>{{film.rating}}</td>
         <td>{{film.release_date}}</td>
@@ -48,6 +28,7 @@
 
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
 </table>
+</body>
 
 {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
 
