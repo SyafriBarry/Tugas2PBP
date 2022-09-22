@@ -2,27 +2,39 @@
 
 {% block content %}
 
-<body style = "font-family:'Courier New'; padding: 5px; background-color: #D2DAFF; color: rgb(0, 0, 0);">
-   <h5 style = "text-align:left;font-size: 24px; background-color: #AEBDCA; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px; box-shadow: 5px 5px 5px #22302c;">Nama: {{nama}}</h5>
-   <h5 style = "text-align:left;font-size: 24px; background-color: #AEBDCA; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px; box-shadow: 5px 5px 5px #22302c;">NPM: {{NPM}} </h5>
+<body style = "font-family:'Courier New'; padding: 5px; background-color: #F1A661; color: rgb(0, 0, 0);">
+    <h1 style = "text-align:center;font-size: 30px; background-color: #D4F6CC; border-radius: 10px 10px 10px 10px; color: rgb(0, 0, 0); padding: 5px;"> Tugas 3 PBP/PBD</h1>
+   <h5 style = "text-align:center;font-size: 24px; background-color: #F1A661; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px;">Nama: {{nama}}</h5>
+   <h5 style = "text-align:center;font-size: 24px; background-color: #F1A661; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px;">NPM: {{NPM}} </h5>
 
 
-<table>
+   <style>
+    table, th, td {
+      
+      padding: 5px;
+    }
+    table {
+      border-spacing: 5px;
+    }
+    </style>
+
+
+<table style="width:100%">
     <tr>
-    <th style = "text-align: center; background-color: #AEBDCA; color: rgb(0, 0, 0); padding: 5px; ">Watched</th>
-    <th>Title</th>
-    <th>Rating</th>
-    <th>Release Date</th>
-    <th>Review</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Watched</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Title</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Rating</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Release Date</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Review</th>
     </tr>
     
     {% for film in list_film %}
     <tr>
-        <td style = "text-align: center; background-color: #AEBDCA; color: rgb(255, 255, 255); padding: 5px; " >{{film.watched}}</td>
-        <td>{{film.title}}</td>
-        <td>{{film.rating}}</td>
-        <td>{{film.release_date}}</td>
-        <td>{{film.review}}</td>
+        <td style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{film.watched}}</td>
+        <td style = "text-align: left; background-color: #ADDDD0; color: rgb(0, 0, 0); padding: 5px;">{{film.title}}</td>
+        <td style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px; ">{{film.rating}}</td>
+        <td style = "text-align: center; background-color: #ADDDD0; color: rgb(0, 0, 0); padding: 5px;">{{film.release_date}}</td>
+        <td style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px; ">{{film.review}}</td>
     </tr>
 {% endfor %}
 
