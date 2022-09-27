@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% csrf_token%}
+<body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #F1A661; color: rgb(0, 0, 0);">
+    <h1 style = "text-align:center;font-size: 30px; background-color: #D4F6CC; border-radius: 10px 10px 10px 10px; color: rgb(0, 0, 0); padding: 5px;"> Tugas 4 PBP/PBD</h1>    
+<h5 style = "text-align:center;font-size: 24px; background-color: #F1A661; border-radius: 10px 10px 10px 10px; color: rgb(255, 255, 255); padding: 5px;">Nama: {{nama}}</h5>
+
+<style>
+    table, th, td, button {
+      
+      padding: 5px;
+    }
+    table {
+      border-spacing: 5px;
+    }
+    </style>
+    
+
+
+<table style="width:100%">
+    <tr>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">To do</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Date</th>
+    <th style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Deskripsi</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+{% for list in list_todo %}
+<tr>
+    <th style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{list.title}}</th>
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;" >{{list.date}}</th>
+    <th style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{list.description}}</th>
+</tr>
+{% endfor %}
+</table>
+<h5 style = "text-align: center; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 5px;">Sesi terakhir login: {{ last_login }}</h5>
+<button><a href="{% url 'todolist:create-task' %}">Task Baru</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+</body>
+{% endblock content %}
