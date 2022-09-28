@@ -1,4 +1,3 @@
-from turtle import title
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
