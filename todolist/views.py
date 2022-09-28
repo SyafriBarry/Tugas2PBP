@@ -65,3 +65,18 @@ def create_task(request):
         temp.save()
         return redirect('todolist:show_todolist')
     return render(request, "create-task.html", context)
+
+def switch_status(request, pk):
+    temp = TodoList.objects.get(id=pk)
+    if (temp.is_finished == False):
+        temp.is_finished = True
+    else:
+        temp.is_finished = False
+    temp.save()
+    return redirect('todolist:show_todolist')
+
+def delete_task(request, pk):
+    temp = TodoList.objects.filter(pk=pk)
+    temp.delete()
+    return redirect('todolist:show_todolist')
+

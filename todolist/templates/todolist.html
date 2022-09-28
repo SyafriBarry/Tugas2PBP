@@ -3,8 +3,8 @@
 {% block content %}
 {% csrf_token%}
 <body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #F1A661; color: rgb(0, 0, 0);">
-    <h1 style = "text-align:center;font-size: 30px; background-color: #D4F6CC; border-radius: 10px 10px 10px 10px; color: rgb(0, 0, 0); padding: 5px;"> Tugas 4 PBP/PBD</h1>    
-<h5 style = "text-align:center;font-size: 32px; background-color: #F1A661; color: rgb(255, 255, 255); padding: 5px;">Nama: {{nama}}</h5>
+    <h1 style = "text-align:center;font-size: 30px; background-color: #D4F6CC; border-radius: 10px 10px 10px 10px; color: rgb(0, 0, 0); padding: 5px;">  Tugas 4 PBP/PBD</h1>    
+<h5 style = "text-align:center;font-size: 32px; background-color: #F1A661; color: rgb(255, 255, 255); padding: 5px;">Holaaaaaa, {{nama}} 🙌</h5>
 
 <style>
     table, th, td, button {
@@ -20,21 +20,31 @@
 
 <table style="width:100%">
     <tr>
-    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">To do</th>
     <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Date</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Tittle</th>
     <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Deskripsi</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Selesai/Belum Selesai</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Mengubah Status</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Hapus</th>
     </tr>
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
 {% for list in list_todo %}
 <tr>
-    <th style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{list.title}}</th>
     <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;" >{{list.date}}</th>
+    <th style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{list.title}}</th>
     <th style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{list.description}}</th>
+    {% if list.is_finished == False %}
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">Belum Selesai</th>
+    {% else %}
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">Selesai</th>
+    {% endif %}
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;"><a href="{% url 'todolist:switch_status' list.pk %}"><button>Switch</button></th>
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;"><a href="{% url 'todolist:delete_task' list.pk %}"><button>Hapus</button></th>
 </tr>
 {% endfor %}
 </table>
 <h5 style = "text-align: center; border-radius: 10px 10px 10px 10px; background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 5px;">Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'todolist:create-task' %}">Task Baru</a></button>
+<button><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
 </body>
