@@ -10,15 +10,25 @@
 <form method="POST" action="">
 
     {% csrf_token %}
+    <body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #319DA0; color: rgb(0, 0, 0); padding: 15px; ">
+        <style>
+            table, th, td, button {
+              
+              padding: 5px;
+            }
+            table {
+              border-spacing: 5px;
+            }
+            </style>
 
-    <table>
+    <table style="width:30%">
         <tr>
-            <td>To do: </td>
+            <td style = "text-align: left; border-radius: 15px 15px 15px 15px; background-color: #319DA0; color: rgb(255, 255, 255); padding: 15px; ">To do: </td>
             <td><input type="text" name="todo" placeholder="TO DO" class="form-control"></td>
         </tr>
                 
         <tr>
-            <td>Description: </td>
+            <td style = "text-align: left; border-radius: 15px 15px 15px 15px; background-color: #319DA0; color: rgb(255, 255, 255); padding: 15px; ">Description: </td>
             <td><input type="text" name="description" placeholder="DESCRIPTION" class="form-control"></td>
         </tr>
 
@@ -27,6 +37,7 @@
             <td><input class="btn login_btn" type="submit" value="Submit" href="{% url 'todolist:show_todolist' %}"></td>
         </tr>
     </table>
+</body>
         
 </form>
 
