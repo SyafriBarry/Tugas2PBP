@@ -1,41 +1,50 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
 {% block meta %}
 <title>Login</title>
 {% endblock meta %}
 
 {% block content %}
+{% load static %}
 
 <div class = "login">
-
-    <body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #1B2430; color: rgb(0, 0, 0);">
-    <h1 style = "text-align: center; background-color: #D4F6CC; border-radius: 15px 15px 15px 15px; color: rgb(0, 0, 0); padding: 10px; ">Login</h1>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-login.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap" rel="stylesheet">
+    <body style = "text-align:center; padding: 5px;  color: rgb(0, 0, 0);">
+    <h1 style = "text-align: center;background-color: #DFE8CC; border-radius: 15px 15px 15px 15px; padding: 10px; ">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
         <style>
             table, th, td, button {
               
-              padding: 5px;
+              padding: 10px;
             }
             table {
               border-spacing: 5px;
             }
             </style>
-        <table style="width:30%">
+        <table style="width:50%">
+            <div class="box-login">
             <tr>
                 <td style = "text-align: center; border-radius: 15px 15px 15px 15px; background-color: #2C3639; color: rgb(255, 255, 255); padding: 10px; ">Username: </td>
-                <td style = "text-align: center; padding: 10px; "><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                <td style = "padding: 10px; "><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
+            </div>
                     
             <tr>
                 <td style ="text-align: center; border-radius: 15px 15px 15px 15px; background-color: #2C3639; color: rgb(255, 255, 255); padding: 10px; ">Password: </td>
-                <td style ="text-align: center; padding: 10px; "><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                <td style ="padding: 10px; "><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
 
             <tr>
                 <td ></td>
-                <td style ="text-align: center; background-color: #1B2430; color: rgb(0, 0, 0); padding: 10px; " ><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input class="login_btn" type="submit" value="Login"></td>
             </tr>
         </table>
     </form>
@@ -44,12 +53,12 @@
         <ul>
             {% for message in messages %}
                 <li style = "color: rgb(255, 255, 255); ">{{ message }}</li>
-            {% endfor %}
+            {% endfor %};
         </ul>
     {% endif %}     
         
     
-        <h5 style = "text-align: center; background-color: #D4F6CC; border-radius: 15px 15px 15px 15px; color: rgb(0, 0, 0); padding: 10px; ">Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a></h5>
+        <h5 style = "text-align: center; background-color: #DFE8CC; border-radius: 15px 15px 15px 15px; padding: 10px; ">Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a></h5>
 
 </body>
 </div>
