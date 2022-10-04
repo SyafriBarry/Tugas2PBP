@@ -20,25 +20,17 @@
 
     <form method="POST" action="">
         {% csrf_token %}
-        <style>
-            table, th, td, button {
-              
-              padding: 10px;
-            }
-            table {
-              border-spacing: 5px;
-            }
-            </style>
-        <table style="width:50%">
+
+        <table>
             <div class="box-login">
             <tr>
-                <td style = "text-align: center; border-radius: 15px 15px 15px 15px; background-color: #2C3639; color: rgb(255, 255, 255); padding: 10px; ">Username: </td>
+                <td>Username: </td>
                 <td style = "padding: 10px; "><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
             </div>
                     
             <tr>
-                <td style ="text-align: center; border-radius: 15px 15px 15px 15px; background-color: #2C3639; color: rgb(255, 255, 255); padding: 10px; ">Password: </td>
+                <td >Password: </td>
                 <td style ="padding: 10px; "><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
 
@@ -58,7 +50,7 @@
     {% endif %}     
         
     
-        <h5 style = "text-align: center; background-color: #DFE8CC; border-radius: 15px 15px 15px 15px; padding: 10px; ">Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a></h5>
+        <h5>Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a></h5>
 
 </body>
 </div>

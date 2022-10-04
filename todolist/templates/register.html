@@ -1,44 +1,47 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
 {% block meta %}
 <title>Registrasi Akun</title>
 {% endblock meta %}
 
-{% block content %}  
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
 
-<div class = "login">
-    <body style = "font-family:'Courier New';text-align:left; padding: 5px; background-color: #1B2430; color: rgb(0, 0, 0);">
-    <h1 style = "text-align:center;font-size: 30px; background-color: #D4F6CC; border-radius: 10px 10px 10px 10px; color: rgb(0, 0, 0); padding: 5px;">Formulir Registrasi</h1> 
-    <style>
-        table, th, td, {
-          
-          padding: 5px;
-        }
-        table {
-          border-spacing: 5px;
-        }
-        </style> 
+<div class = "login bg-dark justify-content-center" style="height: 100vh; margin: 0;">
+    <br></br>
+    <div class="mx-3 d-flex flex-row flex-wrap justify-content-center">
+    <div class="card mx-auto" style="width: 50rem;">
+        <div class="card-body mx-auto">
+          <h1 class="card-title"><strong>FORMULIR REGISTER</strong></h1>
+        </div>
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table style = "text-align: left; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td ><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+        <div class="card-body">
+            <form method="POST">  
+                {% csrf_token %}  
+                <table>  
+                    {{ form.as_table }}  
+                    
+                </table>
+                <div class="div d-flex justify-content-center mt-3">
+                    <input class="btn btn-success" type="submit" name="submit" value="Daftar"/>
+                    </div>   
+            </form>
+        </div>
+    
+        {% if messages %}
+        <div class="card-text mx-auto">
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+              </div>
+            {% endfor %}
+        </div>
+        {% endif %}
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-    </body>
-
-</div>  
+      </div>
+    </div>
+    </div>
 
 {% endblock content %}
+
