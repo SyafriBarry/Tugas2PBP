@@ -7,7 +7,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
-  background: rgb(255, 135, 135);
+  background: rgb(237, 79, 79);
   
 }
 
@@ -140,6 +140,7 @@ nav ul li a:hover{
   display: block;
   background: rgb(78, 162, 117);
   justify-content:space-between;
+  
   
 }
 .card-title {

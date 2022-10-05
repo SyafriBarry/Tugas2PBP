@@ -13,22 +13,24 @@
     {% csrf_token %}
     <div class = "create-task">
     <link rel="stylesheet" href="{% static 'css/bootstrap-create-task.css' %}"/>
-    <h1 style = "text-align: center;background-color: #DFE8CC; border-radius: 15px 15px 15px 15px; padding: 10px; ">Task Baru</h1>
+    <h1 style = "background: rgba(218, 64, 246, 0.3); text-align: center; color: #ffff">Task Baru</h1>
     <body>
         <form>
             <div class="form-group">
-              <label>To do</label>
+              <label style = "color: #ffff">To do</label>
               <input type="text" name="todo" placeholder="TO DO" class="form-control">
             </div>
             <div class="form-group">
-              <label>Description</label>
+              <label style = "color: #ffff">Description</label>
               <input type="text" name="description" placeholder="DESCRIPTION" class="form-control">
             </div>
             <input class="btn login_btn" type="submit" value="Submit" href="{% url 'todolist:show_todolist' %}">
+            <ul>
+              <a href="{% url 'todolist:show_todolist' %}">Kembali</a>
+            </ul>
         </form>
     </body>
-    </div>
-        
+    </div>   
 </form>
 
 

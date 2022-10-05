@@ -21,12 +21,14 @@
                 {% csrf_token %}  
                 <table>  
                     {{ form.as_table }}  
-                    
                 </table>
                 <div class="div d-flex justify-content-center mt-3">
                     <input class="btn btn-success" type="submit" name="submit" value="Daftar"/>
                     </div>   
             </form>
+            <ul>
+              <a href="{% url 'todolist:show_todolist' %}">Kembali</a>
+            </ul>
         </div>
     
         {% if messages %}

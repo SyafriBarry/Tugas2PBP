@@ -71,7 +71,7 @@ h5{
   .login{
   position: fixed;
   top: 50%;
-  left: 35%;
+  left: 30%;
   transform: translate(-30%, -50%);
   background: rgba(4, 29, 23, 0.5);
   padding: 50px;
