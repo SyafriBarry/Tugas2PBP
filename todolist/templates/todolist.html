@@ -56,8 +56,13 @@
       <a href="{% url 'todolist:delete_task' list.pk %}" class="btn btn-primary">Hapus</a>
     </div>
   </div>
+  
   {% endfor %}
+  
 </div>
-    
+<br></br>
+<button><a class="nav-link" href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
+<button><a class="nav-link" href="{% url 'todolist:register' %}">Buat Akun Baru</a></button>
+<button><a class="nav-link" href="{% url 'todolist:logout' %}">Logout</a></button>    
 </body>
 {% endblock content %}
