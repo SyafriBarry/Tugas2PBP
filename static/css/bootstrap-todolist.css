@@ -144,7 +144,7 @@ nav ul li a:hover{
   
 }
 .card-title {
-  background-color: aqua;
+  background-color: rgb(140, 248, 248);
 }
 
 .card-body h5 {
@@ -172,4 +172,7 @@ nav ul li a:hover{
 }
 button:hover{
   background: rgb(114, 114, 244);
+}
+.card-body:hover{
+  background: rgb(140, 248, 248)
 }
