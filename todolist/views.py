@@ -79,3 +79,30 @@ def delete_task(request, pk):
     temp.delete()
     return redirect('todolist:show_todolist')
 
+# TODOLIST AJAX
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    ajax_todolist = TodoList.objects.filter(user=request.user)
+    context = {
+    'ajax_todolist' : ajax_todolist,
+    'username' :  request.user.username,
+    'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "todolist_ajax.html", context)
+
+# AJAX GET
+def todolist_json(request):
+    data_ajax = TodoList.objects.filter(user=request.user)
+
+    return HttpResponse(serializers.serialize("json", data_ajax), content_type="application/json")
+
+# ADD TASK MODAL
+def add_task(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        date = datetime.datetime.now()
+        user = request.user
+        TodoList.objects.create(title=title, description=description, date=date, user=user)
+         
+        return HttpResponse(b"CREATED", status=201)
